@@ -1,10 +1,10 @@
 import { ICategory } from '../interfaces';
-import { Entity, ObjectIdColumn, Column, BeforeUpdate } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate } from 'typeorm';
 
 @Entity()
 export class Category implements ICategory {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   name: string;

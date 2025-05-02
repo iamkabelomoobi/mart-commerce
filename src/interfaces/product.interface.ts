@@ -3,7 +3,7 @@ import { IVariant } from './variant.interface';
 import { ICategory } from './category.interface';
 
 export interface IProduct {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   title: string;
   handle: string;
   description: string;

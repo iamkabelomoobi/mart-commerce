@@ -1,10 +1,10 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { IAddress } from '../interfaces';
 
 @Entity()
 export class Address implements IAddress {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   firstName: string;

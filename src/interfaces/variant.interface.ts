@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 
 export interface IVariant {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   title: string;
   sku: string;
   barcode: string;

@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 
 export interface ICategory {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   name: string;
   description: string;
   handle: string;

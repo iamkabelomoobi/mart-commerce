@@ -1,6 +1,6 @@
 import {
   Entity,
-  ObjectIdColumn,
+  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
@@ -11,8 +11,8 @@ import { IPromotion } from '../interfaces';
 
 @Entity()
 export class Promotion implements IPromotion {
-  @ObjectIdColumn()
-  _id: ObjectId | string;
+  @PrimaryGeneratedColumn('uuid')
+  id: ObjectId | string;
 
   @Column({ unique: true })
   code: string;

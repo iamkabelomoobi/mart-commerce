@@ -1,10 +1,18 @@
-import { Entity, ObjectIdColumn, Column, BeforeUpdate } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BeforeUpdate,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 import { Category, Variant } from './';
 
 @Entity()
 export class Product {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   title: string;
@@ -21,16 +29,17 @@ export class Product {
   @Column()
   thumbnail: string;
 
-  @Column()
+  @Column('simple-array')
   images: string[];
 
-  @Column(() => Variant)
+  @OneToMany(() => Variant, (variant) => variant)
   variants: Variant[];
 
-  @Column(() => Category)
+  @ManyToMany(() => Category)
+  @JoinTable()
   categories: Category[];
 
-  @Column()
+  @Column('simple-array')
   tags: string[];
 
   @Column()

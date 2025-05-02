@@ -6,7 +6,7 @@ import { IShippingMethod } from './shipping-method.interface';
 import { ICustomer } from './customer.interface';
 
 export interface ICart {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   currencyCode: string;
   items: ILineItem[];
   customer: ICustomer;

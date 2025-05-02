@@ -3,7 +3,19 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CartsModule, OrdersModule, ProductsModule } from './modules';
+import {
+  AddressModule,
+  CartModule,
+  CategoryModule,
+  CustomerModule,
+  LineItemModule,
+  OrderModule,
+  ProductModule,
+  PromotionModule,
+  ShippingMethodModule,
+  UserModule,
+  VariantModule,
+} from './modules';
 import {
   Address,
   Cart,
@@ -11,10 +23,11 @@ import {
   Customer,
   LineItem,
   Order,
+  Variant,
   Product,
   Promotion,
   ShippingMethod,
-  Variant,
+  User,
 } from './entities';
 
 @Module({
@@ -28,9 +41,11 @@ import {
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        type: 'mongodb',
+        type: 'postgres',
         host: config.get<string>('DB_HOST'),
         port: config.get<number>('DB_PORT'),
+        username: config.get<string>('DB_USERNAME'),
+        password: config.get<string>('DB_PASSWORD'),
         database: config.get<string>('DB_NAME'),
         entities: [
           Address,
@@ -39,24 +54,33 @@ import {
           Customer,
           LineItem,
           Order,
+          Variant,
           Product,
           Promotion,
           ShippingMethod,
-          Variant,
+          User,
         ],
         synchronize: true,
         logging: true,
       }),
     }),
-    CartsModule,
-    ProductsModule,
-    OrdersModule,
+    AddressModule,
+    CartModule,
+    CategoryModule,
+    CustomerModule,
+    LineItemModule,
+    OrderModule,
+    ProductModule,
+    PromotionModule,
+    ShippingMethodModule,
+    UserModule,
+    VariantModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {
   constructor() {
-    Logger.log('MongoDB connection established');
+    Logger.log('PostgreSQL connection established');
   }
 }

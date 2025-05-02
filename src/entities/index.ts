@@ -8,3 +8,4 @@ export * from './product-variant.entity';
 export * from './product.entity';
 export * from './promotion.entity';
 export * from './shipping-method.entity';
+export * from './user.entity';
