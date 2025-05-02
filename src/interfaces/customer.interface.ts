@@ -1,11 +1,11 @@
 import { ObjectId } from 'mongodb';
 import { IAddress } from './address.interface';
+import { IUser } from './user.interface';
 
 export interface ICustomer {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   firstName: string;
   lastName: string;
-  email: string;
-  phone: string;
   addresses: IAddress[];
+  user: IUser;
 }

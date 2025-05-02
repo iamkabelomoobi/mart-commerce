@@ -1,10 +1,10 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { ILineItem } from '../interfaces';
 
 @Entity()
 export class LineItem implements ILineItem {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   productId: string;

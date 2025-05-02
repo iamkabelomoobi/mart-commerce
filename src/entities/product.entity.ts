@@ -1,10 +1,10 @@
-import { Entity, ObjectIdColumn, Column, BeforeUpdate } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate } from 'typeorm';
 import { Category, Variant } from './';
 
 @Entity()
 export class Product {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   title: string;

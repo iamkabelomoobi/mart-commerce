@@ -1,10 +1,10 @@
-import { Entity, ObjectIdColumn, Column, BeforeUpdate } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeUpdate } from 'typeorm';
 import { IVariant } from '../interfaces';
 
 @Entity()
 export class Variant implements IVariant {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   title: string;

@@ -1,11 +1,18 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
 import { ICustomer } from '../interfaces';
 import { Address } from './address.entity';
+import { User } from './user.entity';
 
 @Entity()
 export class Customer implements ICustomer {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   firstName: string;
@@ -13,12 +20,10 @@ export class Customer implements ICustomer {
   @Column()
   lastName: string;
 
-  @Column()
-  email: string;
-
-  @Column()
-  phone: string;
-
   @Column(() => Address)
   addresses: Address[];
+
+  @OneToOne(() => User, (user) => user.customer, { cascade: true })
+  @JoinColumn()
+  user: User;
 }

@@ -2,7 +2,7 @@ import { ObjectId } from 'mongodb';
 import { IAddress, ICustomer, ILineItem } from './';
 
 export interface IOrder {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   customer: ICustomer;
   status: string;
   paymentStatus: string;

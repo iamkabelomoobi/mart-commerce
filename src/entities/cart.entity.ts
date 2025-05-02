@@ -1,4 +1,4 @@
-import { Entity, ObjectIdColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { ICart } from '../interfaces';
 import { LineItem } from './line-item.entity';
 import { Customer } from './customer.entity';
@@ -8,8 +8,8 @@ import { ShippingMethod } from './shipping-method.entity';
 
 @Entity()
 export class Cart implements ICart {
-  @ObjectIdColumn()
-  _id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   currencyCode: string;

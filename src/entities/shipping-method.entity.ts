@@ -1,6 +1,6 @@
 import {
   Entity,
-  ObjectIdColumn,
+  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
@@ -10,8 +10,8 @@ import { ObjectId } from 'mongodb';
 
 @Entity()
 export class ShippingMethod implements IShippingMethod {
-  @ObjectIdColumn()
-  _id: ObjectId | string;
+  @PrimaryGeneratedColumn('uuid')
+  id: ObjectId | string;
 
   @Column()
   name: string;

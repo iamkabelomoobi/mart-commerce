@@ -8,3 +8,4 @@ export * from './product.interface';
 export * from './promotion.interface';
 export * from './shipping-method.interface';
 export * from './variant.interface';
+export * from './user.interface';

@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 
 export interface IAddress {
-  _id?: ObjectId | string;
+  id?: ObjectId | string;
   firstName: string;
   lastName: string;
   addressLine1: string;

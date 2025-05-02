@@ -1,3 +1,11 @@
-export { CartsModule } from './carts.module';
-export { OrdersModule } from './orders.module';
-export { ProductsModule } from './products.module';
+export { AddressModule } from './address.module';
+export { CartModule } from './cart.module';
+export { CategoryModule } from './category.module';
+export { CustomerModule } from './customer.module';
+export { LineItemModule } from './line-item.module';
+export { OrderModule } from './order.module';
+export { ProductModule } from './product.module';
+export { PromotionModule } from './promotion.module';
+export { ShippingMethodModule } from './shipping-method.module';
+export { UserModule } from './user.module';
+export { VariantModule } from './variant.module';

@@ -1,6 +1,6 @@
 import {
   Entity,
-  ObjectIdColumn,
+  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
@@ -11,8 +11,8 @@ import { Address, Customer, LineItem } from '../entities';
 
 @Entity()
 export class Order implements IOrder {
-  @ObjectIdColumn()
-  _id: ObjectId | string;
+  @PrimaryGeneratedColumn('uuid')
+  id: ObjectId | string;
 
   @Column(() => Customer)
   customer: Customer;
