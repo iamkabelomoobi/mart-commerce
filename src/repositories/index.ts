@@ -1,0 +1,10 @@
+export { CustomerRepository } from './customer.repository';
+export { AddressRepository } from './address.repository';
+export { CartRepository } from './cart.repository';
+export { CategoryRepository } from './category.repository';
+export { LineItemRepository } from './line-item.repository';
+export { OrderRepository } from './order.repository';
+export { ProductRepository } from './product.repository';
+export { PromotionRepository } from './promotion.repository';
+export { ShippingMethodRepository } from './shipping-method.repository';
+export { VariantRepository } from './variant.repository';
