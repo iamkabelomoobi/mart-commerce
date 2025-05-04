@@ -1,4 +1,5 @@
 export * from './address.interface';
+export * from './admin.interface';
 export * from './cart.interface';
 export * from './category.interface';
 export * from './customer.interface';
