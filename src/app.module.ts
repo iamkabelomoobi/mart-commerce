@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {
   AddressModule,
+  AdminModule,
   CartModule,
   CategoryModule,
   CustomerModule,
@@ -18,6 +19,7 @@ import {
 } from './modules';
 import {
   Address,
+  Admin,
   Cart,
   Category,
   Customer,
@@ -49,6 +51,7 @@ import {
         database: config.get<string>('DB_NAME'),
         entities: [
           Address,
+          Admin,
           Cart,
           Category,
           Customer,
@@ -65,6 +68,7 @@ import {
       }),
     }),
     AddressModule,
+    AdminModule,
     CartModule,
     CategoryModule,
     CustomerModule,

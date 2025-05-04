@@ -1,4 +1,5 @@
 export { CustomerRepository } from './customer.repository';
+export { AdminRepository } from './admin.repository';
 export { AddressRepository } from './address.repository';
 export { CartRepository } from './cart.repository';
 export { CategoryRepository } from './category.repository';

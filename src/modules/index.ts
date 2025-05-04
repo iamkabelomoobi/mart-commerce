@@ -1,4 +1,5 @@
 export { AddressModule } from './address.module';
+export { AdminModule } from './admin.module';
 export { CartModule } from './cart.module';
 export { CategoryModule } from './category.module';
 export { CustomerModule } from './customer.module';
